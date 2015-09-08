@@ -1,0 +1,30 @@
+extends layouts/default
+
+block content
+  .form-wrap
+    .title Форма для заполнения
+    form.form
+      label
+        | Название фильма
+        input#title(type='text', name='title')
+      label
+        | Год выпуска
+        input#year(type='text', name='year')
+      label
+        | Жанр
+        input#genre(type='text', name='genre')
+      button.form-btn(type='button', value='Submit') Добавить
+      .title Поиск по списку
+      label
+        | Найти фильм
+        input#search(type='text', name='search')
+  .title Список фильмов
+  .list-wrap
+    
+  script#list(type="text/template").
+    <span><%= title %>, <%= year %>, <%= genre %></span>
+    <br>
+    <button class="list-item--edit-title" type='button' value='Edit-title'>Изменить название</button>
+    <button class="list-item--edit-year" type='button' value='Edit-year'>Изменить год</button>
+    <button class="list-item--edit-genre" type='button' value='Edit-genre'>Изменить жанр</button>
+    <button class="list-item--del" type='button' value='Delete'>Удалить фильм</button>
